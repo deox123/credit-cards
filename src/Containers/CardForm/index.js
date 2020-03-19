@@ -119,6 +119,7 @@ function CardForm({ name, numbers, date, onSubmit, id }) {
 				onChange={handleOnChange}
 				errorMessage={state.name.error}
 				ref={inputRefs.nameRef}
+				data-testid="nameInput"
 			/>
 			<Label onClick={() => focusInput(inputRefs.cardNumber1)}>Card Number</Label>
 			<CardNumberContainer>
@@ -168,7 +169,12 @@ function CardForm({ name, numbers, date, onSubmit, id }) {
 				ref={inputRefs.date}
 				placeholder="MM/YY"
 			/>
-			<Button onClick={handleOnSubmit} isDisabled={disable} ref={inputRefs.submitRef}>
+			<Button
+				onClick={handleOnSubmit}
+				isDisabled={disable}
+				ref={inputRefs.submitRef}
+				data-testid="submitButton"
+			>
 				Save
 			</Button>
 		</Container>
